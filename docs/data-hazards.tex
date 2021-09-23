@@ -1,0 +1,270 @@
+\documentclass{article}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage[sorting=none]{biblatex}
+\addbibresource{data-hazards.bib}
+
+
+\title{Stroke Imaging And Clinical Database For Artificial
+  Intelligence: Data Hazards
+  Workshop Report}
+\author{Emma Si\^{a}n Kuwertz}
+\affil{Jean Golding Institute, University of Bristol}
+\date{2021}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+\section{Introduction}
+
+Stroke is a major cause of disability in adults. Treatment
+decisions rely on the ability of clinicians to combine insights
+gleaned from medical imaging (e.g. computerized tomography (CT)) with
+relevant clinical information and patient medical histories to anticipate the outcome of different treatment
+scenarios. Decision support tools exist, but these are typically able
+to consider information from isolated sources and do not allow the
+integration of medical images. The \textit{Stroke Imaging and Clinical
+Database for AI} project aims to extract provide a linked dataset,
+using clinical and medical imaging inputs from North Bristol Trust (NBT). 
+This will facilitate the development of multi-modal models to explore the potential for stroke treatment outcome
+prediction.\\
+
+This project includes patient information collected at NBT as a part
+of routine care. Public patient involvement (PPI) is an essential
+requirement of this research, and helps to ensure that the project
+will be designed and implemented in such a way as to be acceptable to
+the public. Community engagement also enhances the ethical
+review process, facilitating open discussions about the risks and
+benefits of the research and potentially flagging issues that can be
+addressed early on in the project development.\\
+
+As a part of internal ethics review and public consultation, this
+project was presented and discussed at the first \textit{Data Hazards
+  Workshop}~\cite{data-hazards-workshop}.
+This article reports on the project-specific discussions from that
+workshop and summarises the feedback from the community.
+
+\section{Data Hazards}
+\label{sec:data-labels}
+The idea underpinning data hazards~\cite{data-hazards} is that the ethical implications of
+research projects are often broad and can evolve as projects
+develop and even after public release (depending on subsequent
+use-cases). Given this, a standard vocubulary for potential ethical
+concerns can as a mechanism
+to prompt reflection within research teams during project planning and
+execution and to
+label research outputs to indicate potential ethical pitfalls that should be
+considered when using them. \\
+
+The data hazard labels used to stimulate discussion in this exercise
+are as follows:
+
+\begin{itemize}
+\item \textbf{Reinforces existing biases:} Applies to technologies
+  that could reinforce discriminatory biases as a consequence of data
+  composition or other design choices. 
+\item \textbf{Ranks or classifies people:} Applies to technologies
+  that might categorize or rank individuals.
+\item \textbf{High environmental cost:} Applies to assets that are
+  large energy consumers, or require rare or environmentally
+  compromising materials.
+\item \textbf{Lacks community involvement:} Applies where the dataset
+  or algorithm is being developed without involvement or engagement of
+  the community that it is designed to benefit.
+\item \textbf{Danger of misuse:} Applies where there is a risk that the dataset or
+  algorithm could be used for purposes contrary to its
+  design principles in a potentially negative way. 
+\item \textbf{Difficult to understand:} Applies where the output from
+  the dataset or algorithm is difficult to interpret, or the process
+  to followed to obtain the output is difficult to understand or unavailable.
+\item \textbf{May cause direct harm:} Applies where direct physical or
+  psychological harm may be caused to a person as a consequence of the
+  dataset or algorithm when the technology or asset is being applied
+  in its intended way.
+\item \textbf{Privacy:} Applies where there may be a risk to the
+  privacy of those whose data contributes to or is processed by the
+  dataset or algorithm. 
+\item \textbf{Automates decision making:} Applies where decision
+  making is automated.
+\item \textbf{Lacks informed consent:} Applies where a dataset or
+  algorithm makes use of data without explicit consent of the data
+  owner or creator.
+\end{itemize}
+
+\section{Workshop format and participation}
+
+The primary aim of this workshop was to get community feedback from
+researchers and professionals working in data analytics on the concept
+of data hazard labels.
+Participants were introduced to the idea of data hazards and data
+hazard labels in a plenary session, which included a research project
+walkthrough. Here, an example research project was presented to the
+group, and the data labels that the project owner had identified as
+applicable to the work were shown and explained.
+Next, the group was separated into groups of participants, one
+facilitator and one project owner.
+In these groups, the project owner introduces their research project
+in a 5 minute presentation. Following this, the participants can ask
+the project owner questions about the project. These questions should
+be asked with the purpose of clarifying facts about the project,
+rather than seeking the opinion of the project owner.
+Participants are then asked to determine which of the data hazards
+listed in Section~\ref{sec:data-labels} they feel apply to the
+project. The participants then discuss their choices as a group,
+explaining their thought processes for each relevant data hazard.
+The project owner listens without comment and is able to take note of
+the discussion themes and any specific points to consider further in
+the project development. All participants are finally brought out of
+their groups back into the plenary room, where feedback on the concept
+of data hazard labels is collected. \\
+
+The \textit{Stroke Imaging and Clinical Database for AI} project was
+presented to one of the breakout groups in the data hazards workshop.
+There were five participants in the discussion group:
+
+\begin{itemize}
+\item PhD student in environmental economics.
+\item PhD student in mental health data science.
+\item Lecturer, machine translation.
+\item Medical data manager.
+\item Data scientist, Foreign, Commonwealth and Development Office.
+\end{itemize}
+
+
+
+
+ difficult to eliminate completely any of these hazards, ANYTHING
+  can be misused. If the dataset is available to others then it could
+  be misused.
+
+ \subsection{Reinforcing existing biases:}
+
+
+ Unless you were able to draw on other datasets then not possible to
+protect from biases present in that dataset (e.g. biases on when
+illnesses are reported and how they are reported).
+
+ How are biases being introduced and how are they being highlighted.
+
+ Would this be used in other countries even, where the population
+  in this dataset would not be representative of the native
+  population?
+  -- as a part of the project, get summaries about sample population.
+  
+ having subject-specialist knowledge would be helpful (to
+  understand what any existing biases would be) -- difficult for
+  participants to think about what biases might be in the data, and
+  what might be important for clinical decision making.
+
+  
+\subsection{Danger of misuse}
+
+ Could you ultimately (in the future) draw sensitive information
+  from a CT scan image? Could they be misused for other purposes?
+
+ because the range of applications is so broad, you cannot
+  anticipate what it could be used for so you can't anticipate how it
+  might be misused.
+
+ hard to anticipate what forms of misuse could arise when the
+  dataset goes ``out in the open''. E.g. predict intelligence through
+  CT scan image analysis.
+  --> Kind of reject it, because we don't have linked informtation
+  on subject's intelligence.
+  --> Strikes me that this simply pushes the necessity to carefully
+  define the data fields made available in the dataset.
+  --> balance to be made: but ``publishing data is
+  dangerous and we shouldn't do it'' because open data is super
+  important.
+
+  \subsection{Lack of informed consent}
+
+ Do people really understand what is being done with the
+  data?
+  --> public consultation, trust in the data stewards.
+  --> makes considering other hazards even more important.
+
+ Impracticality of getting informed consent.
+
+\subsection{Lacks community involvement}
+ Patient consultation is important -- should do this as a part of
+  the study (PPI).  
+ Patients generally support data use for benefit of society.
+
+
+
+\printbibliography
+
+\end{document}
+
+% notes collected during workshop
+%\begin{itemize}
+%\item PhD student in environmental economics.
+%\item PhD student in mental health data science.
+%\item Lecturer, machine translation.
+%\item Medical data manager.
+%\item Data scientist, Foreign, Commonwealth and Development Office.
+%\end{itemize}
+%
+%
+%
+%
+%\item difficult to eliminate completely any of these hazards, ANYTHING
+%  can be misused. If the dataset is available to others then it could
+%  be misused.
+%
+% \subsection{Reinforcing existing biases:}
+%
+%
+%\item Unless you were able to draw on other datasets then not possible to
+%protect from biases present in that dataset (e.g. biases on when
+%illnesses are reported and how they are reported).
+%
+%\item How are biases being introduced and how are they being highlighted.
+%
+%\item Would this be used in other countries even, where the population
+%  in this dataset would not be representative of the native
+%  population?
+%  -- as a part of the project, get summaries about sample population.
+%  
+%\item having subject-specialist knowledge would be helpful (to
+%  understand what any existing biases would be) -- difficult for
+%  participants to think about what biases might be in the data, and
+%  what might be important for clinical decision making.
+%
+%  
+%\subsection{Danger of misuse}
+%
+%\item Could you ultimately (in the future) draw sensitive information
+%  from a CT scan image? Could they be misused for other purposes?
+%
+%\item because the range of applications is so broad, you cannot
+%  anticipate what it could be used for so you can't anticipate how it
+%  might be misused.
+%
+%\item hard to anticipate what forms of misuse could arise when the
+%  dataset goes ``out in the open''. E.g. predict intelligence through
+%  CT scan image analysis.
+%  --> Kind of reject it, because we don't have linked informtation
+%  on subject's intelligence.
+%  --> Strikes me that this simply pushes the necessity to carefully
+%  define the data fields made available in the dataset.
+%  --> balance to be made: but ``publishing data is
+%  dangerous and we shouldn't do it'' because open data is super
+%  important.
+%
+%\subsection{Lack of informed consent}
+%\item Do people really understand what is being done with the
+%  data?
+%  --> public consultation, trust in the data stewards.
+%  --> makes considering other hazards even more important.
+%
+%\item Impracticality of getting informed consent.
+%
+%\subsection{Lacks community involvement}
+%\item Patient consultation is important -- should do this as a part of
+%  the study (PPI).  
+%\item Patients generally support data use for benefit of society.
+%\end{itemize}
