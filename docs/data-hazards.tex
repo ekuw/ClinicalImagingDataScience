@@ -133,7 +133,15 @@ There were five participants in the discussion group:
 \end{itemize}
 
 
-\subsection{Discussion}
+\section{Discussion}
+
+In this section the views expressed by workshop participants in
+relating data hazard labels to the \textit{Stroke Imaging and Clinical
+  Database for AI} project are summarised. These are then reflected
+upon and avenues for mitigation of identified hazards are discussed.
+
+
+\subsection{Participant feedback}
 
 During the discussion of this project it was noted that in general it
 is difficult to eliminate any of the data hazards listed in
@@ -144,9 +152,11 @@ if they were not assigned in the original assessment of the project in
 its current scope).
 The discussion group agreed that they would focus on assessing and
 applying hazard labels to the concept of a research data repository,
-while also considering how that resource might be used in the future.\\
+while also considering how that resource might be used in the
+future. The discussions relating to the hazards which were identified
+most frequently are summarised in the following dedicated sections. 
 
-\subsection{Reinforcing existing biases:}
+\subsubsection{Reinforcing existing biases:}
 There were some concerns that the research database could reinforce
 existing biases. With the data being
 extracted from NBT only, and with a focus on patients undergoing
@@ -164,16 +174,10 @@ knowledge. It was felt that knowing what information
 exactly might be considered most important for clinical decision
 making would make it easier to consider and identify potential biases
 in the data, and how relying on that data for algorithmic development
-could reinforce those biases.
-
-- enforce need for clinical expertise in database construction
-- understsand sample composition -- may not include sensitive
-information in database, but should have integrated figures available?
-- highlight any biases for database users to see and understand
-limitations of data 
+could reinforce those biases. \\ 
 
   
-\subsection{Danger of misuse}
+\subsubsection{Danger of misuse}
 
 Given that the project involves a dataset, rather than an algorithm,
 as an output, participants expressed difficulty in
@@ -189,15 +193,69 @@ environmental and medical issues. While they acknowledged the
 necessity for ethical oversight, they felt that sometimes considering
 worst-case-scenarios can lead people to the conclusion that publishing data
 is ``dangerous and we shouldn't do it.'' They felt that potential
-benefits to society should be considered alongside risks to strike a
+benefits to society should be considered alongside risk to strike a
 balance. 
 
---> Kind of reject it, because we don't have linked informtation
-  on subject's intelligence.
-  --> Strikes me that this simply pushes the necessity to carefully
-  define the data fields made available in the dataset.
+\subsubsection{Lack of informed consent}
 
-  \subsection{Lack of informed consent}
+It was generally accepted that, since the database would contain
+patient data collected as a part of routine care (extending across
+over a decade), the exercise of
+acquiring project-specific consent for processing that data would be
+challenging. Despite the acknowledgement that patients are aware that
+their personal data are being collected in a medical setting, there
+were questions around whether people can really understand what
+happens to their data and what it could be subsequently used for.
+One participant expressed that in their experience people generally
+assumed that their health-related data would be used to further
+health care practice and operations.
+
+
+\subsubsection{Lacks community involvement}
+
+Participants were keen that there be adequate consultation with
+patients to understand their views on this project. This was felt to
+be of particular importance given the absence of dedicated consent
+from the patients whose data would contribute to the research
+database. 
+
+Patient consultation is important -- should do this as a part of
+  the study (PPI).  
+ Patients generally support data use for benefit of society.
+
+\subsection{Reflection and mitigation}
+ 
+The discussion surrounding the reinforcement of bias, given the
+composition of the dataset, underlined the need for clinical expertise
+during database construction. Domain knowledge should be exploited to
+highlight potential selection bias in the data sample that might
+otherwise be subtle. In order to better understand and document
+population bias within the sample itself, it would be beneficial to
+publish statistics relating to relative populations of the sensitive data
+categories contributing to the sample. For example, the relative
+proportion of male and female patients, and the relative proportions
+of persons in given age ranges, would be useful to identify where the dataset might be biased towards a certain
+sex or age demographic.
+It would be important to communicate these biases clearly to data
+users to ensure an awareness of the limitations of the dataset.\\
+ 
+Although the discussion relating to potential misuse of the data
+highlighted the impossibility of identifying every possible future
+use, it did raise concerns about the availability of linked data.
+The example of using brain-imaging to predict intelligence, and the
+sort of damage that might do if applied in such a way as to automate
+decision making or to classify individuals, was a powerful one. The
+database envisaged for this work would not include information
+pertaining to an individual's intelligence, but what information might
+it include? This reinforces the idea that it is necessary to carefully
+consider and define the data fields made available in the dataset that
+is eventually made available to researchers. Consultation with
+domain expertise will be vital to determine which fields are most
+relevant to the clinical questions to be addressed by the dataset.\\
+
+
+ 
+~\cite{xafis}
 
  Do people really understand what is being done with the
   data?
@@ -205,12 +263,6 @@ balance.
   --> makes considering other hazards even more important.
 
  Impracticality of getting informed consent.
-
-\subsection{Lacks community involvement}
- Patient consultation is important -- should do this as a part of
-  the study (PPI).  
- Patients generally support data use for benefit of society.
-
 
 
 \printbibliography
