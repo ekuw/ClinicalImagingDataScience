@@ -40,7 +40,24 @@ prediction.\\
 
 \section{Project achievements}
 
+This project was granted funding for 6 months by the Elizabeth
+Blackwell Institute (EBI) Health Data Science research strand (with
+support from the Wellcome Trust Institutional Strategic Support Fund
+(ISSF)), commencing in June 2021. During this 6 month period the
+following aims were pursued:
+\begin{enumerate}
+\item Draft project protocol to gain NBT sponsorship.
+\item Prepare documents for Health Research Authority approval.
+\item Produce a specification for the data repository.
+\item Conduct a small pilot project using data.
+\item Scope opportunities for further funding.
+\end{enumerate}
 
+\subsection{Protocol and sponsorship}
+
+The protocol for this project has been drafted and was submitted to
+NBT research sponsor for review on 16/11/2021 (R\&I number 5055). This was prepared with
+support from NBT. A risk register was completed
 
 \subsection{Patient Public Involvement}
 
@@ -98,11 +115,30 @@ following data hazards:
 
 \subsection{Patient Public Involvement}
 
+
+During the expert consultation at the Data hazards workshop there was speculation as to what degree the general public expect that
+their personal and medical information might be used in research
+without their explicit permission (even where data is collected as a
+part of routine care).
+In general there was a notion that the public generally accepted that
+their medical data would likely be ued to further the public good,
+with the understanding that no identifiable information would be
+compromised. Still, it is important to engage with patients in this
+space. The Bristol Health Partners Stroke Health Integration Team
+(HIT) has a Service User Group involving people across BNSSG with
+experience of stroke and stroke services.
+They provide PPI input for research projects and will be given the
+opportunity to be involved in this project in the future,
+particularly in the areas of research design, analysis and
+dissemination.
+
 \subsection{Consultation workshops}
 
 Once the project data is in hand and in-principle available on the
 University of Bristol's RDSF, a series of consultation workshops are
-planned. The purpose of these will be as follows:
+planned. It is envisaged that this series will be composed of one
+preliminary workshop, followed by two hackathon-style events.
+The purpose of these will be as follows:
 
 \begin{enumerate}
 \item Gain feedback from the academic and clinical
@@ -121,15 +157,16 @@ planned. The purpose of these will be as follows:
 The above points will further enable the design and specification for
 a queriable database. Addressing the above will allow planning for
 optimal data extraction and filtering from the database, and will
-essentially inform database design and construction.``
+essentially inform database design and construction.\\
 
 The initial preliminary workshop will be an opportunity to bring
 together all co-applicants on this project and provide interactions
 between clinical researchers, software engineers and computer
 scientists. This will be an opportunity to present this preliminary
-data offering and scope use cases and collaborative pursuits. 
+data offering and scope use cases and collaborative pursuits. The plan
+for the preliminary workshop is as follows:\\
 
-\textbf{\underline{Preliminary workshop}}\\
+\noindent\textbf{\underline{Preliminary workshop}}\\
 
 \textbf{Foreseen attendees:}
 \begin{itemize}
@@ -178,60 +215,92 @@ data offering and scope use cases and collaborative pursuits.
     the project data resource.
   \end{itemize}
 \end{itemize}
-    Plan for a series of workshops / hackathons to come up with and explore more concrete themes/projects.
 
-The discussion surrounding the reinforcement of bias, given the
-composition of the dataset, underlined the need for clinical expertise
-during database construction. Domain knowledge should be exploited to
-highlight potential selection bias in the data sample that might
-otherwise be subtle. In order to better understand and document
-population bias within the sample itself, it would be beneficial to
-publish statistics relating to relative populations of the sensitive data
-categories contributing to the sample. For example, the relative
-proportion of male and female patients, and the relative proportions
-of persons in given age ranges, would be useful to identify where the dataset might be biased towards a certain
-sex or age demographic.
-It would be important to communicate these biases clearly to data
-users to ensure an awareness of the limitations of the dataset.\\
- 
-Although the discussion relating to potential misuse of the data
-highlighted the impossibility of identifying every possible future
-use, it did raise concerns about the availability of linked data.
-The example of using brain-imaging to predict intelligence, and the
-sort of damage that might do if applied in such a way as to automate
-decision making or to classify individuals, was a powerful one. The
-database envisaged for this work would not include information
-pertaining to an individual's intelligence, but what information might
-it include? This reinforces the idea that it is necessary to carefully
-consider and define the data fields made available in the dataset that
-is eventually made available to researchers. Consultation with
-domain expertise will be vital to determine which fields are most
-relevant to the clinical questions to be addressed by the dataset.\\
+It is expected that discussions during the preliminary workshop will
+result in the identification of additional data preparation /
+processing steps necessary to facilitate researcher interaction with
+the dataset. Ahead of the hackathons, the following steps will be
+taken and resources
+prepared for participants:
 
-There was speculation as to what degree the general public expect that
-their personal and medical information might be used in research
-without their explicit permission. Reviewing ethical research
-literature can offer insights in this space, where there have been
-studies into how patients feel about what does and doesn't warrant
-their explicit consent. In one case where dataset linkage is addressed
-specifically~\cite{xafis}, it was noted that most people consulted
-felt that data linkage projects without consent are acceptable,
-with the condition that researchers do not gain access to identifiable
-information. This underlines the importance of having a fully
-anonymized dataset for researchers and for data linkage to take place
-within the NBT system, and speaks to the necessity for public trust in data
-stewards. In this project NBT are the data stewards of the sensitive
-data, and the NHS is generally perceived as trustworthy organisation in terms
-of information privacy and security.  \\
+\begin{itemize}
+\item Data quality checks and cleaning will be performed
+\item Data will be linked together appropriately and access to the
+  dataset on RDSF will be secured for named researchers
+\item Metadata will be prepared to describe the dataset contents and layout
+\item Data querying examples/scripts will be provided for hackathon participants
+\item Instructions for data access will be provided to hackathon participants
+\end{itemize}
 
-Even with available ethics literature and historical studies that seek
-to understand public views on the processing of their data in a
-health-care setting and beyond, the fruitful discussions highlighted
-the need for engaging with both the public and care-givers early
-throughout the project lifetime. The workshop served as a valuable
-consultation with academics and data-centric professionals, and
-identified key ethical points to consider and integrate into the
-project design and implementation. 
+During the hackathons, researchers will access the data and begin
+preliminary analyses / investigations in their chosen research
+area. This hands-on experience with the dataset will help to expose
+any additional issues with the dataset and identify any missing or
+perhaps superfluous information. In this way, the first hackathon is
+expected to further inform dataset design. \\
+
+The second hackathon will occur following a first round of feedback
+from researchers regarding their experience of using the dataset. This
+means that in the second hackathon access to a new iteration of the
+dataset will be provided for researchers. Researchers will also
+provide feedback on important questions like sample-size and
+composition appropriateness. 
+
+\subsection{Privacy and ethics}
+
+There are several areas under ethics, privacy and security that will
+be further studied and addressed. These include data investigations
+and subsequent metadata to document data composition and highlight
+internal dataset bias and arrangements for future data sharing and data access.
+
+\subsubsection{Sample bias}
+The discussions from the Data Hazards workshop highlighted the need
+for clear documentation of sample composition and available data
+fields. An important question to be investigated with the
+researcher-access database is \textit{``what metadata should be provided
+  alongside the database to facilitate the mitigation of bias when the
+  data is used in research?"} At the very least the following
+database statistics will be made available:
+\begin{itemize}
+\item What is the sample size?
+\item What is the gender composition?
+\item What is the ethnicity composition?
+\item What is the hospital-level composition?
+\item What is the procedural composition?
+\item What is the age composition?
+\end{itemize}
+
+\noindent Clinicians will beconsulted to exploit domain knowledge that may highlight clinical
+selection bias.
+
+
+\subsubsection{Misuse}
+
+To guard against potential misuse of this data resource, a clear data
+access request and approval procedure will be drafted. It is envisaged
+that new access requests will be submitted to the project PI (Phil
+Clatworthy). These requests will need to include a clear proposal
+describing the intended use of the data in research. If granted, access to the
+data will be permitted for purposes related to the proposed research
+only, and will be given for the proposed project duration.\\
+
+To minimise the potential for data to be linked with other unintended data
+sources out of context, the data fields made available in the dataset
+will be strictly controlled. The planned consultation workshops will
+provide a pruning exercise, whereby superfluous data fields will be
+dropped and motivated data fields kept. \\
+
+\subsection{Security}
+
+Further engagement with NBT and University of Bristol IT services will
+help to inform and solidify the data sharing arrangements for the
+research database. The RDSF will be used at the University of Bristol
+during dataset scoping and pilot phases, however a queriable database
+would be more efficiently accessed from elsewhere (RDSF is not
+optimised for efficient data access). Planning and executing this
+phase of database design will be important following initial dataset
+preparation (e.g. in parallel with / informed by the series of
+consultation workshops).
 
 
 %\printbibliography
