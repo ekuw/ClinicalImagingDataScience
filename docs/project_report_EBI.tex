@@ -1,0 +1,239 @@
+\documentclass{article}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage[sorting=none]{biblatex}
+\addbibresource{data-hazards.bib}
+
+
+\title{
+  Elizabeth Blackwell Institute Project Report:\\
+  Stroke Imaging And Clinical Database For Artificial
+  Intelligence
+}
+\author[1]{Emma Si\^{a}n Kuwertz}
+\author[2,3]{Philip Clatworthy}
+\affil[1]{Jean Golding Institute, University of Bristol}
+\affil[2]{North Bristol NHS Trust}
+\affil[3]{Bristol Medical School, University of Bristol}
+\date{2021}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+\section{Introduction}
+
+Stroke is a major cause of disability in adults. Treatment
+decisions rely on the ability of clinicians to combine insights
+gleaned from medical imaging (e.g. computerized tomography (CT)) with
+relevant clinical information and patient medical histories to anticipate the outcome of different treatment
+scenarios. Decision support tools exist, but these are typically able
+to consider information from isolated sources and do not allow the
+integration of medical images. The \textit{Stroke Imaging and Clinical
+Database for AI} project aims to extract provide a linked dataset,
+using clinical and medical imaging inputs from North Bristol NHS Trust (NBT). 
+This will facilitate the development of multi-modal models to explore the potential for stroke treatment outcome
+prediction.\\
+
+
+
+\section{Project achievements}
+
+
+
+\subsection{Patient Public Involvement}
+
+This project includes the use of patient information collected at NBT as a part
+of routine care. Public patient involvement (PPI) is an essential
+requirement of this research, and will help to ensure that the project
+will be designed and implemented in such a way as to be acceptable to
+the public. Community engagement also enhances the ethical
+review process, facilitating open discussions about the risks and
+benefits of the research and potentially flagging issues that can be
+addressed early on in the project development.\\
+
+As a part of internal ethics review and public consultation, this
+project was presented and discussed at the first \textit{Data Hazards
+  Workshop}~\cite{data-hazards-workshop} in September 2021. Here, this
+project was presented and discussed within a small group of public
+participants consisting of doctoral students, academics and data
+professionals. An article
+reporting on the discussions and considerations raised at the
+workshop was subsequently produced and will form an important part of
+the project PPI documentation.\\
+
+The data hazards discussions highlighted concerns regarding the
+following data hazards:
+
+\begin{itemize}
+\item Reinforcing existing bias
+  \begin{itemize}
+  \item The dataset is selected based on locality (limited to NBT)
+    and procedure (neuroimaging) and so will be demographically
+    biased.
+  \item The sample may be intrinsically biased due to internal composition.
+  \end{itemize}
+\item Danger of misuse
+  \begin{itemize}
+  \item The immediate project output is a dataset and not an
+    algorithm, therefore it is difficult to predict all possible
+    future uses for this dataset. How can misuse be foreseen and prevented?
+  \end{itemize}
+\item Lack of informed consent
+  \begin{itemize}
+  \item Data used here is collected as a part of routine care, making
+    the collection of explicit consent from individuals difficult / unrealistic.
+  \end{itemize}     
+\item Lack of community involvement
+  \begin{itemize}
+  \item In the absence of explicit patient consent, consultation with
+    patient communities is important and should be a priority.
+  \end{itemize}     
+\end{itemize}
+
+
+\section{Next steps}
+
+
+\subsection{Patient Public Involvement}
+
+\subsection{Consultation workshops}
+
+Once the project data is in hand and in-principle available on the
+University of Bristol's RDSF, a series of consultation workshops are
+planned. The purpose of these will be as follows:
+
+\begin{enumerate}
+\item Gain feedback from the academic and clinical
+  community on how they envisage using the dataset in their
+  research. 
+\item Identify additional research questions that will be studied using the data
+  resource.
+\item Understand how clinical and computer science researchers
+  currently interact with data: which tools are predominantly used?
+\item Gain insight into how researchers will want to query the
+  data.
+\item Identify any core data fields which will be most commonly
+  in use.
+\end{enumerate}
+
+The above points will further enable the design and specification for
+a queriable database. Addressing the above will allow planning for
+optimal data extraction and filtering from the database, and will
+essentially inform database design and construction.``
+
+The initial preliminary workshop will be an opportunity to bring
+together all co-applicants on this project and provide interactions
+between clinical researchers, software engineers and computer
+scientists. This will be an opportunity to present this preliminary
+data offering and scope use cases and collaborative pursuits. 
+
+\textbf{\underline{Preliminary workshop}}\\
+
+\textbf{Foreseen attendees:}
+\begin{itemize}
+\item Dr Marcus Bradley, Consultant interventional neuroradiologist
+  and Clinical Lead for Neuroradiology, North Bristol Trust
+\item Rhona Galt, Director of Transformation and Innovation/AI lead,
+  North Bristol Trust
+\item Dr Emma Kuwertz, Data Science Specialist, Jean Golding
+  Institute, University of Bristol
+\item Dr Phil Clatworthy, Honorary Senior Lecturer and
+  Consultant Stroke Neurologist, North Bristol Trust
+\item Prof. Kate Robson-Brown, Director, Jean Golding
+  Institute, University of Bristol
+\item Mr Kumar Abhinav, Consultant Neurosurgeon, North Bristol Trust
+\item Prof. Rob Hinchliffe, Professor of Vascular Surgery and
+  Consultant Vascular Surgeon, North Bristol Trust
+\item Dr Richard Ibitoye, Honorary Consultant Neurologist,
+  Gloucestershire Hospitals NHS Foundation Trust
+\item Prof Majid Mirmehdi, Professor of Computer Vision, Department of
+  Computer Science, University of Bristol
+\item Dr Edwin Simpson, Lecturer of Computer Science, Department of
+  Computer Science, University of Bristol
+\item Dr Conor Houghton, head of Neural Computation group, Faculty
+  of Engineering, University of Bristol
+\item Dr George Harston, Chief Medical and Innovation Officer,
+  Brainomix Limited, Oxford, UK
+\item \textit{Invite research software engineering representatives from
+    University of Bristol's Advanced Computing Research Centre}
+\end{itemize}
+
+\textbf{Agenda}
+\begin{itemize}
+\item    Present data specification and availability \textit{(Phil
+    Clatworthy \& Emma Kuwertz)}
+\item    Introduce JGI and current health data science collaboration \textit{(Phil
+    Clatworthy, Emma Kuwertz, Kate Robson-Brown)}
+\item    Present research questions in stroke \textit{(Phil
+    Clatworthy \& others)}, vascular surgery \textit{(Rob Hinchliffe
+    \& others)},
+  neuroradiology \textit{(Marcus Bradley \& others)}
+\item Questions to participants (in advance):
+  \begin{itemize}
+  \item Participant research ideas
+  \item Participant research area questions / problems / issues that
+    could be addressed (or studies that could be facilitated) using
+    the project data resource.
+  \end{itemize}
+\end{itemize}
+    Plan for a series of workshops / hackathons to come up with and explore more concrete themes/projects.
+
+The discussion surrounding the reinforcement of bias, given the
+composition of the dataset, underlined the need for clinical expertise
+during database construction. Domain knowledge should be exploited to
+highlight potential selection bias in the data sample that might
+otherwise be subtle. In order to better understand and document
+population bias within the sample itself, it would be beneficial to
+publish statistics relating to relative populations of the sensitive data
+categories contributing to the sample. For example, the relative
+proportion of male and female patients, and the relative proportions
+of persons in given age ranges, would be useful to identify where the dataset might be biased towards a certain
+sex or age demographic.
+It would be important to communicate these biases clearly to data
+users to ensure an awareness of the limitations of the dataset.\\
+ 
+Although the discussion relating to potential misuse of the data
+highlighted the impossibility of identifying every possible future
+use, it did raise concerns about the availability of linked data.
+The example of using brain-imaging to predict intelligence, and the
+sort of damage that might do if applied in such a way as to automate
+decision making or to classify individuals, was a powerful one. The
+database envisaged for this work would not include information
+pertaining to an individual's intelligence, but what information might
+it include? This reinforces the idea that it is necessary to carefully
+consider and define the data fields made available in the dataset that
+is eventually made available to researchers. Consultation with
+domain expertise will be vital to determine which fields are most
+relevant to the clinical questions to be addressed by the dataset.\\
+
+There was speculation as to what degree the general public expect that
+their personal and medical information might be used in research
+without their explicit permission. Reviewing ethical research
+literature can offer insights in this space, where there have been
+studies into how patients feel about what does and doesn't warrant
+their explicit consent. In one case where dataset linkage is addressed
+specifically~\cite{xafis}, it was noted that most people consulted
+felt that data linkage projects without consent are acceptable,
+with the condition that researchers do not gain access to identifiable
+information. This underlines the importance of having a fully
+anonymized dataset for researchers and for data linkage to take place
+within the NBT system, and speaks to the necessity for public trust in data
+stewards. In this project NBT are the data stewards of the sensitive
+data, and the NHS is generally perceived as trustworthy organisation in terms
+of information privacy and security.  \\
+
+Even with available ethics literature and historical studies that seek
+to understand public views on the processing of their data in a
+health-care setting and beyond, the fruitful discussions highlighted
+the need for engaging with both the public and care-givers early
+throughout the project lifetime. The workshop served as a valuable
+consultation with academics and data-centric professionals, and
+identified key ethical points to consider and integrate into the
+project design and implementation. 
+
+
+%\printbibliography
+
+\end{document}
