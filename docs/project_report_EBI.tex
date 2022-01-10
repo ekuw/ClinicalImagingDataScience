@@ -17,11 +17,13 @@
 \affil[1]{Jean Golding Institute, University of Bristol}
 \affil[2]{North Bristol NHS Trust}
 \affil[3]{Bristol Medical School, University of Bristol}
-\date{2021}
+\date{November 2021}
 
 \begin{document}
 \maketitle
-%\tableofcontents
+\newpage
+\tableofcontents
+\newpage
 \section{Introduction}
 
 Stroke is a major cause of disability in adults. Treatment
@@ -43,7 +45,19 @@ prediction.\\
 This project was granted funding for 6 months by the Elizabeth
 Blackwell Institute (EBI) Health Data Science research strand (with
 support from the Wellcome Trust Institutional Strategic Support Fund
-(ISSF)), commencing in June 2021. During this 6 month period the
+(ISSF)), commencing in June 2021.
+
+The intended outcomes of this work are as follows:
+\begin{itemize}
+\item 	A repository of routinely collected NHS stroke clinical and imaging data, curated to enable the development of artificial intelligence software for clinical applications. 
+\item 	Design and plan for a data pipeline, centred around the NBT Data Warehouse, PACS and Electronic Patient Record, scalable to include other health, social care and research data sources. 
+\item 	Workshop with clinical and commercial partners to consult on
+  repository specifications and identify target clinical research
+  projects in stroke, and where possible initiate pilot projects using
+  the repository produced in (1) above.
+\end{itemize}
+
+\noindent Towards this, during the 6 month period funded by the EBI, the
 following aims were pursued:
 \begin{enumerate}
 \item Draft project protocol to gain NBT sponsorship.
@@ -53,13 +67,188 @@ following aims were pursued:
 \item Scope opportunities for further funding.
 \end{enumerate}
 
+\noindent The progress made towards these aims is summarised in the following
+section.
 \subsection{Protocol and sponsorship}
 
 The protocol for this project has been drafted and was submitted to
 NBT research sponsor for review on 16/11/2021 (R\&I number 5055). This was prepared with
-support from NBT. A risk register was completed
+support from NBT.\\
 
-\subsection{Patient Public Involvement}
+\subsection{Documents for Health Research Authority Approval}
+
+\subsubsection{Risk Register}
+A risk register was completed following iteration with the NBT
+research sponsorship team. This included confirming the peer review of
+the project obtained during the EBI funding panel review. It is
+being considered whether the updated protocol document (once the next round of feedback from NBT
+sponsor is implemented) will be shared with a group of selected
+experts for a formal peer review.\\
+
+A key question during risk assessment and project approval concerns
+the sample size of the dataset. We expect approximately 10,000 people
+in the cohort initially, which is constrained by data availability
+(PACS contains images for the past 15 years, corresponding to
+approximately 10,000 patients).
+Large samples are generally required to develop machine learning
+algorithms, and determining optimal sample size will feature as an
+intermediate outcome of this project. While 10,000 will provide a
+reasonable statistical basis for initial studies, as R\&D progresses
+using the existing data the optimal sample size will likely be
+reviewed.\\
+
+\subsubsection{Data Protection Impact Assessment}
+
+
+During the risk and data protection impact assessment it was important to identify any
+sensitive data fields that would need to be accessed during database
+construction (even if such fields may be subsequently dropped later in
+the data processing pipeline and therefore not stored in the research
+database). In most cases NHS number is enough to cross-reference
+records from different tables / databases.
+Here, only those persons directly involved in the data extraction and
+linkage procedure (e.g. clinical staff executing database queries or
+those linking the output tables together) will have access to
+identifiable information. Any information only needed for the linking
+process will be removed from the linked outputs. Some personal data,
+such as date of birth, is necessary for algorithm development (as age
+could be an important indicator when predicting patient treatment
+outcomes). The sensitive fields of relevance have been identified and
+reasoned in the project protocol document. The data protection impact
+assessment form for this project was signed by the responsible person
+at NBT on
+18/10/2021.\\
+
+\subsubsection{IRAS Form}
+
+In parallel to the data protection impact assessment, risk register
+and protocol draft, an IRAS form has been completed (IRAS number 302301) ready for
+submission to the research sponsor (and subsequently HRA). \\
+
+\subsubsection{Proof of Indemnity Insurance}
+
+Following instructions from the University of Bristol's Research
+Governance
+team\footnote{\url{http://www.bristol.ac.uk/secretary/insurance/clinical-research-insurance/}}
+it was confirmed that the University's Public Liability insurance
+applies for this research project: \textit{The University of Bristol's
+  Public Liability insurance policy provides an indemnity to our
+  employees for their potential liability for harm to participants
+  during the conduct of the research.}
+This follows, since this study falls under the Minimal Intervention Studies heading in the Data-only studies category. \\
+
+The study has been registered with the Research Governamce team via
+the completion of the \textit{Research Registration Checklist}, which
+is available through the Research Governance
+webpages\footnote{http://www.bristol.ac.uk/red/research-governance/}.
+A summary of the information entered into this checklist can be found
+in Appendix~\ref{app:research_reg_checklist}.
+
+\subsection{Data specification}
+
+This study will require the bringing together of data from the
+following sources:
+\begin{itemize}
+\item	North Bristol Trust data warehouse: A full data extract for a 15 year period (dictated by data availability), which includes: 
+  \begin{itemize}
+  \item	Subset of EPR data fields in Lorenzo [including NHS number and hospital number for data linkage purposes] 
+  \item	Subset of RIS data fields [Radiology data including exam code (both diagnostic and interventional procedures), procedure dates, imaging reports]
+  \item	Subset of operative procedure data fields e.g. neurosurgical
+    procedures, including procedure dates
+  \item	Diagnosis coding
+  \end{itemize}
+\item	North Bristol Trust data entered into the Sentinel Stroke National Audit Programme database 
+\item	Imaging data from North Bristol Trust PACS, including: CT images, MR images, Digital Subtraction Angiography, Vascular ultrasound (e.g. carotid duplex).
+\end{itemize}
+
+During the 6 month scoping period clinical analysts at NBT have
+provided information as to the data tables and fields available at the
+NBT Data Warehouse. This has enabled a first draft of the data fields
+to be queried in order to select the data extract to be studied.\\
+
+In order to further prune the dataset and provide a clear data
+specification, access to the data is required by the research
+team. For the data science experts (Emma Kuwertz) involved in data
+specification and processing, this requires an NHS letter of
+access. Relevant paperwork to secure this has been completed, but the
+research sponsor will need to approve the protocol and secure HRA
+approval prior to the letter of access being issued.\\
+
+\subsubsection{Sensitive data}
+
+During the Data Proteciton Impact Assessment a number of fields that
+corresponded to either personal
+identifiable data or sensitive (special category) data were flagged as being potentially needed for data
+processing purposes. An effort has been made to identify the minimum possible sensitive
+data fields needed for data querying and linkage. Once a sensitive
+data field has served its purpose it will be dropped from the dataset
+at the next step of the processing chain. \\
+
+NHS number is needed in
+order to query and link patient records from the PACS system to
+clinical records from the NBT data warehouse.
+Date of birth and Age are needed for data quality checks on procedure
+dates and age at time of procedure, though day of month will be
+dropped early in the data processing chain (MMYY should provide
+adequate accuracy to verify the age of a patient at the time of a
+particular CT scan image). Following this verification date of birth
+will be dropped from the extract prior to pseudonymisation.
+Gender is of interest for research purposes and will be
+retained in the anonymised dataset.  Diagnosis is also of relevance to
+predictive modelling research. Including diagnosis in the data will
+allow for research into the training of predictive models to extract
+features common to images and clinical records with a given diagnosis.
+
+
+\subsection{Pilot project}
+
+Without HRA approval it has not been possible to carry out a pilot
+project using the proposed dataset. There has, however, been
+discussions and connections made with some interested academics. This
+has resulted in some ideas for pilot projects when the data repository
+is ready in a preliminary form. This has resulted in the preparation
+of two grant applications to date. \\
+
+Within this consultation the following preliminary research questions
+have been identified for IRAS form submission for HRA approval:
+\begin{itemize}
+\item \textbf{Primary questions:}
+  \begin{itemize}
+  \item Identify cases with and without stroke, as well as stroke subtypes, including evaluation of different methods and combinations of methods to achieve this.
+  \item predict outcomes with and without treatment, including
+    modelling the benefit of treatment.
+  \end{itemize}
+\item \textbf{Secondary research questions:}
+  \begin{itemize}
+  \item Can NPL be used on imaging reports in order to efficiently automate labelling of images for the training and validation of deep learning models?
+  \item Can a secure data extraction, linkage, and anonymisation
+    process be automated to provide a data pipeline to feed a
+    research database for clinical and image data?
+  \end{itemize}
+\end{itemize}
+
+
+
+\subsection{Further funding opportunities}
+
+During this project scoping phase several opportunities for future
+funding have been identified and pursued.
+\begin{itemize}
+\item A substantial imaging strand has been formed within the NIHR
+  Biomedical Research Centre funding bid (invitation for interview in
+  March 2022).
+\item An expression of interest has been submitted for an MRC funding
+  call \textit{AI for better biomedical research} to investigate natural language processing
+  applications within this dataset [unsuccessful].
+\item An expression of interest has been submitted to Southmead Hospital Charity
+  Research Fund to use this dataset to study cerebral venous thrombosis.
+\end{itemize}
+
+Further funding sources are being sought to facilitate planned future
+work surrounding database design and consultation with academics,
+clinicians and the public.
+
+\section{Data Hazards Workshop Participation}
 
 This project includes the use of patient information collected at NBT as a part
 of routine care. Public patient involvement (PPI) is an essential
@@ -110,29 +299,7 @@ following data hazards:
 \end{itemize}
 
 
-\section{Next steps}
-
-
-\subsection{Patient Public Involvement}
-
-
-During the expert consultation at the Data hazards workshop there was speculation as to what degree the general public expect that
-their personal and medical information might be used in research
-without their explicit permission (even where data is collected as a
-part of routine care).
-In general there was a notion that the public generally accepted that
-their medical data would likely be ued to further the public good,
-with the understanding that no identifiable information would be
-compromised. Still, it is important to engage with patients in this
-space. The Bristol Health Partners Stroke Health Integration Team
-(HIT) has a Service User Group involving people across BNSSG with
-experience of stroke and stroke services.
-They provide PPI input for research projects and will be given the
-opportunity to be involved in this project in the future,
-particularly in the areas of research design, analysis and
-dissemination.
-
-\subsection{Consultation workshops}
+\section{Consultation workshop plans}
 
 Once the project data is in hand and in-principle available on the
 University of Bristol's RDSF, a series of consultation workshops are
@@ -219,7 +386,11 @@ for the preliminary workshop is as follows:\\
 It is expected that discussions during the preliminary workshop will
 result in the identification of additional data preparation /
 processing steps necessary to facilitate researcher interaction with
-the dataset. Ahead of the hackathons, the following steps will be
+the dataset.\\
+
+\noindent\textbf{\underline{Hackathons}}\\
+
+Ahead of the hackathons, the following steps will be
 taken and resources
 prepared for participants:
 
@@ -245,6 +416,77 @@ means that in the second hackathon access to a new iteration of the
 dataset will be provided for researchers. Researchers will also
 provide feedback on important questions like sample-size and
 composition appropriateness. 
+
+\section{Next steps}
+
+
+\subsection{Patient Public Involvement}
+
+
+During the expert consultation at the Data hazards workshop there was speculation as to what degree the general public expect that
+their personal and medical information might be used in research
+without their explicit permission (even where data is collected as a
+part of routine care).
+In general there was a notion that the public generally accepted that
+their medical data would likely be ued to further the public good,
+with the understanding that no identifiable information would be
+compromised. Still, it is important to engage with patients in this
+space. The Bristol Health Partners Stroke Health Integration Team
+(HIT) has a Service User Group involving people across BNSSG with
+experience of stroke and stroke services.
+They provide PPI input for research projects and will be given the
+opportunity to be involved in this project in the future,
+particularly in the areas of research design, analysis and
+dissemination.
+
+\subsection{Data specification}
+
+Members outside the direct care team are unable to access the data
+extracted from NBT until HRA approval is secured. This means that the
+EBI-funded phase of this project has been limited to consultation with
+NBT analysts regarding data availability and type. Following HRA
+approval, data will be extracted from the NBT Data Warehouse and the
+cleaning and linkage process can proceed. This will be an exploratory
+procedure initially, with quality checks being performed to assure the
+reliability of data fields, and studies being carried out to validate
+the data presentation (how should the data be \textit{shaped}, what is
+the most sensible way to organise and link the data).\\
+
+\subsubsection{Data linkage}
+
+The data will be extracted from different tables within the NBT Data
+Warehouse, and will need to be combined / linked. This is envisaged to
+take place initially using NHS numbers where possible, but it is
+likely that other identifiers will be needed in some cases (e.g. to
+link procedure codes with procedure scans and reports). A linkage
+method will need to be established and tested using an initial data
+extract. This will be done within the NBT network.
+
+\subsubsection{Data quality}
+
+Following the establishment of a linkage procedure, the procedure
+itself will need to be validated. Sanity checks will be specified and
+carried out on the linked data to ensure that data has been linked as
+intended and expected.\\
+
+Futher, individual data fields will need to be quality assured to
+determine reliability. For example, if some fields contain a mjority
+of missing data, it should be understood why this is. Some fields may
+contain contradictory information, which should be investigated. This
+will allow the most reliable fields to be identified, and the most
+unreliable to be flagged (and possibly removed).
+
+\subsubsection{Automation}
+
+Once a reasnoably final dataset has been constructed, with clearly defined
+data fields and quality assurance and linkage procedures
+established, one should aim for automation. This should be a
+consideration throughout the exploratory and iterative data extraction
+process. Challenges to automation should be identified and
+considered. In order to scale this resource in the future, a clearly
+defined and reproducible recipe for database creation should be
+curated. 
+
 
 \subsection{Privacy and ethics}
 
@@ -290,7 +532,7 @@ will be strictly controlled. The planned consultation workshops will
 provide a pruning exercise, whereby superfluous data fields will be
 dropped and motivated data fields kept. \\
 
-\subsection{Security}
+\subsubsection{Security}
 
 Further engagement with NBT and University of Bristol IT services will
 help to inform and solidify the data sharing arrangements for the
@@ -303,6 +545,80 @@ preparation (e.g. in parallel with / informed by the series of
 consultation workshops).
 
 
-%\printbibliography
 
+
+\appendix
+\section{Univesity of Bristol: Research Registration Checklist}
+\label{app:research_reg_checklist}
+\begin{small}
+  \begin{center}
+    \begin{tabular}{p{0.3\linewidth}p{0.6\linewidth}}
+      \hline
+      \multicolumn{2}{c}{GENERAL}\\
+      \hline
+      
+      Submitter &  Emma Kuwertz \\
+      CI / PI &  Phil Clatworthy \\
+      Title &  OUTCOME PREDICTION AND DECISION SUPPORT FOR STROKE USING ROUTINE NHS DATA\\
+      Student? &  No\\
+      Start &  2021-06-01\\
+      End &  2025-05-31\\
+      Finance &  1415172\\
+      \hline\hline
+      \multicolumn{2}{c}{RISK LEVEL}\\
+      \hline
+      CTIMP? & No\\
+      Device? &  No\\
+      Human Tissue? No\\
+      Sites &  ["staff, premises or resources of one or NHS Trusts?"]\\
+      \hline\hline
+      \multicolumn{2}{c}{SPONSORSHIP \& REC}\\
+      Sponsorship &  My project does meet one or more of the above criteria - it will be Sponsored by another organisation.\\
+      Sponsorship, if other &  North Brisol NHS Trust\\
+      NHS REC? &  My project does not meet any of the above criteria BUT does involve NHS staff or facilities. (In this case you will require HRA approval.)\\
+      UoB REC? &  I will apply for UoB School/Faculty REC using the online application system:  orems.bristol.ac.uk\\
+      S/FREC, if applicable & \\
+      S/FREC reference, if applicable & \\
+      REC, if Other & \\
+      \hline\hline
+      \multicolumn{2}{c}{INSURANCE}\\
+      \hline
+      Non PL categories & \\
+      NHS Indemnity? & \\
+      MDU? & \\
+      CI / PI &  Phil Clatworthy\\
+      Employer & \\
+      Honorary Contract? & Yes\\
+      Other staff & \\
+      Other info & \\
+      \hline\hline
+      \multicolumn{2}{c}{FUNDING \& PEER REVIEW}\\
+      \hline
+      Funded? &  Yes\\
+      Funder &  EBI\\
+      Amount &  £10000\\
+      Peer Review &  I will be seeking peer review.\\
+      Reviewer(s) &  The study team has sufficient expertise to ensure
+                    the scientific merit of the project. Please let us
+                    know if we have to provide a formal report. The project was also reviewed by EBI, who awarded the initial funds. Data processes have been through the formal information governance processes at NBT. Data Protection Impact Assessment form can be made available on request.\\
+      \hline\hline
+      \multicolumn{2}{c}{ADOPTION}\\
+      \hline
+      Portfolio &  No\\
+      BTC &  No\\
+      \hline\hline
+      \multicolumn{2}{c}{CONTACT}\\
+      \hline
+      CONTACT
+      Name &  Emma Kuwertz\\
+      Role &  Other Investigator\\
+      Department &  Jean Golding Institute\\
+      Contact &  emma.kuwertz@bristol.ac.uk\\
+      Date &  2021-11-22\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{small}
+
+\printbibliography
 \end{document}
