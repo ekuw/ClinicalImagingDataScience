@@ -30,7 +30,9 @@ Stroke is a major cause of disability in adults. Treatment
 decisions rely on the ability of clinicians to combine insights
 gleaned from medical imaging (e.g. computerized tomography (CT)) with
 relevant clinical information and patient medical histories to anticipate the outcome of different treatment
-scenarios. Decision support tools exist, but these are typically able
+scenarios.
+Machine learning algorithms are showing impressive results for diagnosis~\cite{ai_mam} and decision support~\cite{clinical_dec_support}. 
+Decision support tools exist, but these are typically able
 to consider information from isolated sources and do not allow the
 integration of medical images. The \textit{Stroke Imaging and Clinical
 Database for AI} project aims to extract provide a linked dataset,
@@ -146,7 +148,7 @@ in Appendix~\ref{app:research_reg_checklist}.
 
 \subsection{Data specification}
 
-This study will require the bringing together of data from the
+This study requires the bringing together of data from the
 following sources:
 \begin{itemize}
 \item	North Bristol Trust data warehouse: A full data extract for a 15 year period (dictated by data availability), which includes: 
@@ -173,6 +175,20 @@ specification and processing, this requires an NHS letter of
 access. Relevant paperwork to secure this has been completed, but the
 research sponsor will need to approve the protocol and secure HRA
 approval prior to the letter of access being issued.\\
+
+\subsubsection{Data extraction and aggregation}
+
+Data from the NBT data warehouse will be extracted by clinical
+analysts (who have existing access to this data) using a to-be-refined
+SQL query. Patients from NBT with radiology treatments recorded in RIS over the past 15 years will be queried. Records will be extracted if there is a corresponding short code in the radiology table from the NBT Data Warehouse that implies an imaging procedure has been carried out that includes imaging of blood vessels from thoracic aorta and superior vena cava upwards to brain, and including subclavian artery, but not arm arteries.\\
+
+This method will result in multiple tables being extracted
+from the data warehouse, which will need to be joined/merged. Where
+the joining procedure will require access to personal identifiers
+(e.g. NHS number) this will be done by clinical analysts, since UoB
+data scientists will not have access to personal identifiers. This
+joined data will be provided to the project team in csv format, to be
+validated, cleaned, converted and pruned.
 
 \subsubsection{Sensitive data}
 
@@ -333,7 +349,7 @@ scientists. This will be an opportunity to present this preliminary
 data offering and scope use cases and collaborative pursuits. The plan
 for the preliminary workshop is as follows:\\
 
-\noindent\textbf{\underline{Preliminary workshop}}\\
+\subsection{Preliminary workshop}
 
 \textbf{Foreseen attendees:}
 \begin{itemize}
@@ -388,7 +404,7 @@ result in the identification of additional data preparation /
 processing steps necessary to facilitate researcher interaction with
 the dataset.\\
 
-\noindent\textbf{\underline{Hackathons}}\\
+\subsection{Hackathons}
 
 Ahead of the hackathons, the following steps will be
 taken and resources
@@ -544,6 +560,21 @@ phase of database design will be important following initial dataset
 preparation (e.g. in parallel with / informed by the series of
 consultation workshops).
 
+\section{Summary}
+
+This project aims to use routine clinical data, collected at North
+Bristol NHS Trust to leverage medical imaging reports as an untapped
+source of expertise to assist in automatic identification and
+labelling of images of stroke; identify cases with and without stroke,
+as well as stroke subtypes, including evaluation of different methods
+and combinations of methods to achieve this; eventually predict
+outcomes with and without treatment, including modelling the benefit
+of treatment. The initial six months of funding made available by the
+Elizabeth Blackwell Institute and Wellcome Trust Institutional
+Strategic Support Fund has supported work towards these aims. The
+documents necessary for HRA approval have been compiled, and clinical
+and academic collaborators have been identified, with pilot project
+proposals in preparation as a result. 
 
 
 
